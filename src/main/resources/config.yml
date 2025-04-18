@@ -1,0 +1,24 @@
+web:
+  browser: chrome
+  baseUrl: https://example.com
+  apiUrl: https://www.winners-portal-staging.tekark.com/api/v1
+
+mobile:
+  android:
+    platformName: Android
+    platformVersion: "14"
+    deviceName: emulator-5554
+    appPath: src/main/resources/Apps/demo.apk
+    appPackage: com.apkpure.aegon
+    automationName: UiAutomator2
+  ios:
+    platformName: iOS
+    platformVersion: "18.2"
+    deviceName: Simulator
+    appPath: apps/my-app.ipa
+    bundle: <app-bundle>
+    automationName: XCUITest
+
+report:
+  outputPath: reports
+  theme: dark
