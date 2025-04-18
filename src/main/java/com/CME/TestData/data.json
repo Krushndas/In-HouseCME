@@ -1,11 +1,21 @@
 {
   "app": {
-    "url": "https://in-house-staging.tekark.com/site-admin/login"
+    "url": "https://in-house-staging.tekark.com/site-admin/login",
+    "homepageURL": "https://in-house-staging.tekark.com/"
   },
   "users": {
     "admin": {
       "username": "techark.testinguser1@gmail.com",
       "password": "Qwe@1234"
     }
+  },
+  "learner": {
+    "firstName": "Automation",
+    "lastName": "Learner",
+    "password": "Test@1234",
+    "middleName": "test",
+    "degree": "MD",
+    "group": "Group3"
+
   }
 }
