@@ -38,9 +38,10 @@ public class AdminDashboard extends BaseTest {
         TestUtils.clickElement(getLocator("generic.searchIcon"));
         return this;
     }
-    public AdminDashboard clickOnEditIcon(){
+    public AdminDashboard clickOnEditIcon() throws InterruptedException {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
         //TestUtils.clickElement(getLocator("generic.editIcon"));
+        Thread.sleep(2000);
         String dynamicEmail = getValue("learner.firstName") + timestamp + "@yopmail.com";
 
 // 2. Build XPath to locate the Edit button next to that email

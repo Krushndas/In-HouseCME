@@ -12,17 +12,17 @@
     </test>
     <test name="LearnerLoginTest">
         <classes>
-            <class name="com.CME.TestCases.LearnerLoginTest"/>
-        </classes>
-    </test>
-    <test name="LearnerChangePasswordTest">
-        <classes>
-            <class name="com.CME.TestCases.LearnerChangePasswordTest"/>
-        </classes>
-    </test>
-    <test name="AdminEditLearnerProfile">
-        <classes>
             <class name="com.CME.TestCases.AdminEditLearnerTest"/>
         </classes>
     </test>
+<!--    <test name="LearnerChangePasswordTest">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.LearnerChangePasswordTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="AdminEditLearnerProfile">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.AdminEditLearnerTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

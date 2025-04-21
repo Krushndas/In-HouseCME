@@ -32,7 +32,7 @@ public class AdminEditLearnerTest extends BaseTest {
     }
 
     @Test(description = "Verify that UAdmin is able to edit learner")
-    public void verifyAdminIsAbleToEditLearner() {
+    public void verifyAdminIsAbleToEditLearner() throws InterruptedException {
         adminLoginPage.enterUsername(getValue("users.admin.username"))
                 .enterPassword(getValue("users.admin.password"))
                 .clickOnLoginButton();
@@ -45,11 +45,11 @@ public class AdminEditLearnerTest extends BaseTest {
 
     }
 
-    @AfterMethod
-    public void afterTest(){
-        BaseTest.tearDown();
-
-    }
+//    @AfterMethod
+//    public void afterTest(){
+//        BaseTest.tearDown();
+//
+//    }
 }
 
 
