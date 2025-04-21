@@ -1,6 +1,7 @@
 package com.CME.AdminPages;
 
 import com.core_automation.base.BaseTest;
+import com.core_automation.utils.TestUtils;
 
 import static com.core_automation.utils.LocatorUtil.getLocator;
 import static com.core_automation.utils.TestDataUtil.getValue;
@@ -14,17 +15,17 @@ public class AdminLoginPage extends BaseTest {
     }
 
     public AdminLoginPage enterUsername(String username){
-        enterValue(getLocator("loginPage.usernameField"), username);
+        TestUtils.enterValue(getLocator("loginPage.usernameField"), username);
         return this;
     }
 
     public AdminLoginPage enterPassword(String password){
-        enterValue((getLocator("loginPage.passwordField")), password);
+        TestUtils.enterValue((getLocator("loginPage.passwordField")), password);
         return this;
     }
 
     public AdminLoginPage clickOnLoginButton(){
-        clickElement(getLocator("loginPage.loginButton"));
+       TestUtils.clickElement(getLocator("generic.loginButton"));
         return this;
     }
 }

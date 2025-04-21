@@ -7,26 +7,26 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static com.core_automation.utils.LocatorUtil.getLocator;
 import static com.core_automation.utils.TestUtils.isElementDisplayed;
 
-public class RegisterLearnerPage extends BaseTest {
+public class ManageRegisterLearnerPage extends BaseTest {
 
-    public RegisterLearnerPage enterFirstName(String firstName){
+    public ManageRegisterLearnerPage enterFirstName(String firstName){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
         TestUtils.enterValue(getLocator("learner.firstName"),firstName);
         return this;
     }
-    public RegisterLearnerPage enterLastName(String lastName){
+    public ManageRegisterLearnerPage enterLastName(String lastName){
         TestUtils.enterValue(getLocator("learner.lastName"),lastName);
         return this;
     }
-    public RegisterLearnerPage enterWorkEmail(String email){
+    public ManageRegisterLearnerPage enterWorkEmail(String email){
         TestUtils.enterValue(getLocator("learner.email"),email);
         return this;
     }
-    public RegisterLearnerPage enterMobileNumber(String mobileNumber){
+    public ManageRegisterLearnerPage enterMobileNumber(String mobileNumber){
         TestUtils.enterValue(getLocator("lerner.mobileNumber"),mobileNumber);
         return this;
     }
-    public RegisterLearnerPage enterPassword(String Password){
+    public ManageRegisterLearnerPage enterPassword(String Password){
         TestUtils.enterValue(getLocator("learner.password"),Password);
         return this;
     }
@@ -38,6 +38,7 @@ public class RegisterLearnerPage extends BaseTest {
     public boolean isLearnerDashboardVisible(){
         return isElementDisplayed(getLocator("learner.loginToastMessage"));
     }
+
 
 
 

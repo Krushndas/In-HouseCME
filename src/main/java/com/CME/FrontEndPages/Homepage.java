@@ -25,5 +25,13 @@ public class Homepage extends BaseTest {
         TestUtils.clickElement(getLocator("signUp.registerAsLearner"));
     }
 
+    public void clickOnSignInButton(){
+        TestUtils.clickElement(getLocator("homepage.signInButton"));
+
+    }
+
+
+
+
 
 }

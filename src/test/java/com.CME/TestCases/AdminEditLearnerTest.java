@@ -5,11 +5,14 @@ import com.CME.AdminPages.AdminLoginPage;
 import com.CME.BaseClass;
 import com.core_automation.base.BaseTest;
 import com.core_automation.utils.Common;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import static com.core_automation.utils.TestDataUtil.getValue;
 
-public class AdminLoginPageTest extends BaseTest {
-
+public class AdminEditLearnerTest extends BaseTest {
     public static AdminLoginPage adminLoginPage;
     public static AdminDashboard adminDashboard;
 
@@ -28,12 +31,17 @@ public class AdminLoginPageTest extends BaseTest {
         adminLoginPage.visitURL();
     }
 
-    @Test(description = "Verify that admin is able to login")
-    public void verifyAdminIsAbleToLogin() {
+    @Test(description = "Verify that UAdmin is able to edit learner")
+    public void verifyAdminIsAbleToEditLearner() {
         adminLoginPage.enterUsername(getValue("users.admin.username"))
                 .enterPassword(getValue("users.admin.password"))
                 .clickOnLoginButton();
         Common.assertionTrue(adminDashboard.isDashboardVisible(),"Dashboard is displayed");
+        adminDashboard.clickOnMenuIcon()
+                .clickOnModule(getValue("admin.learner"))
+                .searchLearnerUser(getValue("learner.firstName") + timestamp + "@yopmail.com")
+                .clickOnSearchIcon()
+                .clickOnEditIcon();
 
     }
 

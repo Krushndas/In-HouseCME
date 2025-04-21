@@ -1,7 +1,7 @@
 {
   "app": {
-    "url": "https://in-house-staging.tekark.com/site-admin/login",
-    "homepageURL": "https://in-house-staging.tekark.com/"
+    "url": "https://in-house-testing.tekark.com/site-admin/learner",
+    "homepageURL": "https://in-house-testing.tekark.com/"
   },
   "users": {
     "admin": {
@@ -9,13 +9,29 @@
       "password": "Qwe@1234"
     }
   },
+  "admin": {
+      "learner": "Learners",
+      "password": ""
+  },
   "learner": {
     "firstName": "Automation",
     "lastName": "Learner",
     "password": "Test@1234",
     "middleName": "test",
+    "suffix": "Sr.",
+    "backupEmail": "AutomationB",
+    "address": "SM cleveland",
+    "city": "Cleveland",
+    "state": "Ohio",
+    "zip": "23510",
+    "experties": "Test Automation Learner profile completion",
     "degree": "MD",
-    "group": "Group3"
+    "boardCertification": "ABPM - American Board of Podiatric Medicine",
+    "group": "Group3",
+    "practiceName": "AutomationPractice",
+    "address2": "SMP address",
+    "extension": "91",
+    "phoneNumber": "9028804584"
 
   }
 }
