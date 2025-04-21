@@ -7,7 +7,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import static com.core_automation.utils.LocatorUtil.getLocator;
+import static com.core_automation.utils.TestUtils.clickElement;
 import static com.core_automation.utils.TestUtils.isElementDisplayed;
 
 public class ManageLearnerPage extends BaseTest {
@@ -81,6 +85,16 @@ public class ManageLearnerPage extends BaseTest {
         TestUtils.selectDropdownValue(getLocator("learner.profile.boardCertification"), boardCertificate);
         return this;
     }
+    public ManageLearnerPage selectStateLicense(String stateLicense){
+        TestUtils.selectDropdownValue(getLocator("learner.profile.statelicense"), stateLicense);
+        return this;
+    }
+    public ManageLearnerPage selectStateLicenseRenewalDate(){
+        TestUtils.clickElement(getLocator("learner.profile.licenseRenewalDate"));
+        selectDate();
+        return this;
+    }
+
 
     public ManageLearnerPage clickOnSaveAndContinueButton() throws InterruptedException {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
@@ -161,6 +175,13 @@ public class ManageLearnerPage extends BaseTest {
     public ManageLearnerPage clickOnChangePasswordButton(){
         TestUtils.clickElement(getLocator("learner.changePassword"));
         return this;
+    }
+    public static void selectDate(){
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd");
+        String formattedDate = currentDate.format(formatter);
+        clickElement(getLocator("learner.profile.date", formattedDate));
+        log.info("Selected Date {}", formattedDate);
     }
 
 
