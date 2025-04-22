@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import static com.core_automation.utils.TestDataUtil.getValue;
 
-public class LearnerChangePasswordTest extends BaseTest {
+public class EducatorChangePasswordTest extends BaseTest {
     public static Homepage homepage;
     public static ManageLearnerLoginPage manageLearnerLoginPage;
     public static ManageLearnerPage manageLearnerPage;
@@ -61,4 +61,3 @@ public class LearnerChangePasswordTest extends BaseTest {
 
     }
 }
-

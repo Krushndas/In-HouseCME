@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="AddEditLearnerTestSuite" verbose="1">
+<suite name="AddEditEducatorTestSuite" verbose="1">
     <listeners>
         <listener class-name="com.CME.utils.TestListener" />
     </listeners>
     <parameter name="type" value="individual"/>
-    <test name="RegisterLearnerTest">
+    <test name="RegisterEducatorTest">
         <classes>
-            <class name="com.CME.TestCases.RegisterLearnerPageTest"/>
+            <class name="com.CME.TestCases.RegisterEducatorTest"/>
         </classes>
     </test>
-<!--    <test name="LearnerLoginTest">-->
-<!--        <classes>-->
-<!--            <class name="com.CME.TestCases.AdminEditLearnerTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="LearnerChangePasswordTest">-->
-<!--        <classes>-->
-<!--            <class name="com.CME.TestCases.LearnerChangePasswordTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="AdminEditLearnerProfile">-->
-<!--        <classes>-->
-<!--            <class name="com.CME.TestCases.AdminEditLearnerTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="EducatorLoginTest">
+        <classes>
+            <class name="com.CME.TestCases.EducatorLoginTest"/>
+        </classes>
+    </test>
+    <test name="EducatorChangePasswordTest">
+        <classes>
+            <class name="com.CME.TestCases.EducatorChangePasswordTest"/>
+        </classes>
+    </test>
+    <test name="AdminEditEducatorProfile">
+        <classes>
+            <class name="com.CME.TestCases.AdminEditEducatorTest"/>
+        </classes>
+    </test>
 </suite>

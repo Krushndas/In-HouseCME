@@ -24,6 +24,11 @@ public class Homepage extends BaseTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("signUp.registerAsLearner")));
         TestUtils.clickElement(getLocator("signUp.registerAsLearner"));
     }
+    public void clickOnRegisterAsEducatorButton(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("signUp.registerAsEducator")));
+        TestUtils.clickElement(getLocator("signUp.registerAsEducator"));
+    }
 
     public void clickOnSignInButton(){
         TestUtils.clickElement(getLocator("homepage.signInButton"));

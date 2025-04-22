@@ -29,7 +29,7 @@ public class ManageLearnerLoginPage extends BaseTest {
         TestUtils.clickElement(getLocator("generic.loginButton"));
         return this;
     }
-    public boolean isLearnerLogin(){
+    public boolean isUserIsLogin(){
         return isElementDisplayed(getLocator("learner.loginToastMessage"));
     }
 

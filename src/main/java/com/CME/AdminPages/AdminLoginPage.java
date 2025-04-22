@@ -15,7 +15,7 @@ public class AdminLoginPage extends BaseTest {
     }
 
     public AdminLoginPage enterUsername(String username){
-        TestUtils.enterValue(getLocator("loginPage.usernameField"), username);
+        TestUtils.enterValue(getLocator("generic.email"), username);
         return this;
     }
 

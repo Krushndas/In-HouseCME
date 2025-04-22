@@ -10,8 +10,8 @@
     }
   },
   "admin": {
-      "learner": "Learners",
-      "password": ""
+    "learner": "Learners",
+    "educator": "Educators"
   },
   "learner": {
     "firstName": "Automation",
@@ -32,6 +32,34 @@
     "address2": "SMP address",
     "extension": "91",
     "phoneNumber": "9028804584"
-
+  },
+  "adminLearner": {
+    "edit": {
+      "firstName": "Admin_Learner",
+      "password": "Qwe@1234"
+    }
+  },
+  "educator": {
+    "firstName": "Automation",
+    "lastName": "educator",
+    "password": "Test@1234",
+    "middleName": "test",
+    "suffix": "Sr.",
+    "address": "SM cleveland",
+    "city": "Cleveland",
+    "state": "Ohio",
+    "zip": "23510",
+    "degree": "MD",
+    "phoneNumber": "9028804584",
+    "SSN": "123456789",
+    "bankRoutingNumber": "123123123",
+    "bankAccountNumber": "123412341234",
+    "address2": "Automation Address"
+  },
+  "adminEducator": {
+    "edit": {
+      "firstName": "Admin_Educator",
+      "password": "Qwe@1234"
+    }
   }
 }

@@ -38,11 +38,29 @@ public class AdminDashboard extends BaseTest {
         TestUtils.clickElement(getLocator("generic.searchIcon"));
         return this;
     }
-    public AdminDashboard clickOnEditIcon() throws InterruptedException {
+    public AdminDashboard clickOnLearnerEditIcon() throws InterruptedException {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
         //TestUtils.clickElement(getLocator("generic.editIcon"));
         Thread.sleep(2000);
         String dynamicEmail = getValue("learner.firstName") + timestamp + "@yopmail.com";
+
+// 2. Build XPath to locate the Edit button next to that email
+        String xpath = "//td[text()='" + dynamicEmail + "']/following-sibling::td/a[@class='action-btn']/span";
+
+// 3. Find the WebElement using the XPath
+        WebElement editButton = driver.findElement(By.xpath(xpath));
+
+// 4. Use JavascriptExecutor to click the edit button
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", editButton);
+
+        return this;
+    }
+    public AdminDashboard clickOnEducatorEditIcon() throws InterruptedException {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
+        //TestUtils.clickElement(getLocator("generic.editIcon"));
+        Thread.sleep(2000);
+        String dynamicEmail = getValue("educator.firstName") + timestamp + "@yopmail.com";
 
 // 2. Build XPath to locate the Edit button next to that email
         String xpath = "//td[text()='" + dynamicEmail + "']/following-sibling::td/a[@class='action-btn']/span";

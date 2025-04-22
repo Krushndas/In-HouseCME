@@ -30,23 +30,23 @@ public class ManageLearnerPage extends BaseTest {
         return this;
     }
     public ManageLearnerPage enterFirstName(String firstName){
-        TestUtils.enterValue(getLocator("learner.profile.firstname"),firstName);
+        TestUtils.enterValue(getLocator("generic.profile.firstname"),firstName);
         return this;
     }
     public ManageLearnerPage enterMiddleName(String middleName){
-        TestUtils.enterValue(getLocator("learner.profile.middleName"),middleName);
+        TestUtils.enterValue(getLocator("generic.profile.middleName"),middleName);
         return this;
     }
     public ManageLearnerPage enterLastName(String lastName){
-        TestUtils.enterValue(getLocator("learner.profile.lastname"),lastName);
+        TestUtils.enterValue(getLocator("generic.profile.lastname"),lastName);
         return this;
     }
     public ManageLearnerPage selectSuffix(String suffix) {
-        TestUtils.selectDropdownValue(getLocator("learner.profile.suffix"), suffix);
+        TestUtils.selectDropdownValue(getLocator("generic.profile.suffix"), suffix);
         return this;
     }
     public ManageLearnerPage enterMobileNumber(String mobileNumber){
-        TestUtils.enterValue(getLocator("learner.profile.mobileNumber"),mobileNumber);
+        TestUtils.enterValue(getLocator("generic.profile.mobileNumber"),mobileNumber);
         return this;
     }
     public ManageLearnerPage enterBackupEmail(String backupEmail) {
@@ -54,23 +54,23 @@ public class ManageLearnerPage extends BaseTest {
         return this;
     }
     public ManageLearnerPage enterWorkEmail(String workEmail) {
-        TestUtils.enterValue(getLocator("learner.profile.email"), workEmail);
+        TestUtils.enterValue(getLocator("generic.profile.email"), workEmail);
         return this;
     }
     public ManageLearnerPage enterAddress(String address){
-        TestUtils.enterValue(getLocator("learner.profile.address"),address);
+        TestUtils.enterValue(getLocator("generic.profile.address"),address);
         return this;
     }
     public ManageLearnerPage enterCity(String city){
-        TestUtils.enterValue(getLocator("learner.profile.city"),city);
+        TestUtils.enterValue(getLocator("generic.profile.city"),city);
         return this;
     }
     public ManageLearnerPage selectState(String state){
-        TestUtils.selectDropdownValue(getLocator("learner.profile.state"), state);
+        TestUtils.selectDropdownValue(getLocator("generic.profile.state"), state);
         return this;
     }
     public ManageLearnerPage enterZip(String zip){
-        TestUtils.enterValue(getLocator("learner.profile.zip"),zip);
+        TestUtils.enterValue(getLocator("generic.profile.zip"),zip);
         return this;
     }
     public ManageLearnerPage enterExpertise(String expertise){
@@ -78,7 +78,7 @@ public class ManageLearnerPage extends BaseTest {
         return this;
     }
     public ManageLearnerPage selectDegree(String degree){
-        TestUtils.selectDropdownValue(getLocator("learner.profile.degree"), degree);
+        TestUtils.selectDropdownValue(getLocator("generic.profile.degree"), degree);
         return this;
     }
     public ManageLearnerPage selectBoardCertificate(String boardCertificate){
@@ -86,10 +86,12 @@ public class ManageLearnerPage extends BaseTest {
         return this;
     }
     public ManageLearnerPage selectStateLicense(String stateLicense){
-        TestUtils.selectDropdownValue(getLocator("learner.profile.statelicense"), stateLicense);
+        TestUtils.selectDropdownValue(getLocator("learner.profile.stateLicense"), stateLicense);
         return this;
     }
     public ManageLearnerPage selectStateLicenseRenewalDate(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("learner.profile.licenseRenewalDate")));
         TestUtils.clickElement(getLocator("learner.profile.licenseRenewalDate"));
         selectDate();
         return this;
@@ -112,7 +114,13 @@ public class ManageLearnerPage extends BaseTest {
         return this;
     }
     public ManageLearnerPage clickOnAddPracticeButton(){
-        TestUtils.clickElement(getLocator("learner.profile.addPracticeButton"));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("learner.profile.addPracticeButton")));
+        WebElement element = driver.findElement(By.id("practice-btn-1"));
+// 2. Cast WebDriver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+// 3. Click using JavaScript
+        js.executeScript("arguments[0].click();", element);
         return this;
     }
     public ManageLearnerPage enterNameOfPractice(String practice){
@@ -169,7 +177,7 @@ public class ManageLearnerPage extends BaseTest {
     }
     public ManageLearnerPage clickOnEditProfileIcon(){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
-        TestUtils.clickElement(getLocator("Learner.profileIcon"));
+        TestUtils.clickElement(getLocator("learner.profileIcon"));
         return this;
     }
     public ManageLearnerPage clickOnChangePasswordButton(){
@@ -180,8 +188,18 @@ public class ManageLearnerPage extends BaseTest {
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd");
         String formattedDate = currentDate.format(formatter);
-        clickElement(getLocator("learner.profile.date", formattedDate));
+        clickElement(getLocator("generic.profile.selectDate", formattedDate));
         log.info("Selected Date {}", formattedDate);
+    }
+    public ManageLearnerPage clickOnUpdateLearnerButton(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("admin.learnerProfile.saveAndUpdateButton")));
+        WebElement element = driver.findElement(By.xpath("//button[text()='Update Learner']"));
+// 2. Cast WebDriver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+// 3. Click using JavaScript
+        js.executeScript("arguments[0].click();", element);
+        return this;
     }
 
 

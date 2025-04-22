@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import static com.core_automation.utils.TestDataUtil.getValue;
 
 
-public class RegisterLearnerPageTest extends BaseTest {
+public class RegisterLearnerTest extends BaseTest {
 
     public static Homepage homePage;
     public static ManageRegisterLearnerPage registerLearnerPage;
@@ -65,7 +65,7 @@ public class RegisterLearnerPageTest extends BaseTest {
                 .selectStateLicenseRenewalDate()
                 .clickOnSaveAndContinueButton()
                 //.selectGroup(getValue("learner.group"))
-                .clickOnSaveAndUpdateButton()
+                //.clickOnSaveAndUpdateButton()
                 .clickOnAddPracticeButton()
                 .enterNameOfPractice(getValue("learner.practiceName"))
                 .enterPracticeAddress(getValue("learner.address"))

@@ -26,7 +26,7 @@ public class ManageUsersChangePasswordPage extends BaseTest {
     }
 
     public boolean isPasswordUpdated(){
-        return TestUtils.isElementDisplayed(getLocator("password.toastMessage"));
+        return TestUtils.isElementDisplayed(getLocator("generic.password.toastMessage"));
     }
 
 }

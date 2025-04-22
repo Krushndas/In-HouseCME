@@ -8,7 +8,7 @@ import com.core_automation.utils.Common;
 import org.testng.annotations.*;
 import static com.core_automation.utils.TestDataUtil.getValue;
 
-public class AdminLoginPageTest extends BaseTest {
+public class AdminLoginTest extends BaseTest {
 
     public static AdminLoginPage adminLoginPage;
     public static AdminDashboard adminDashboard;
