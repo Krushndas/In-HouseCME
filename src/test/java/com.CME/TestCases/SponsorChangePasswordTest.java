@@ -2,9 +2,9 @@ package com.CME.TestCases;
 
 import com.CME.BaseClass;
 import com.CME.FrontEndPages.Homepage;
-import com.CME.FrontEndPages.ManageUsersLoginPage;
 import com.CME.FrontEndPages.ManageLearnerPage;
 import com.CME.FrontEndPages.ManageUsersChangePasswordPage;
+import com.CME.FrontEndPages.ManageUsersLoginPage;
 import com.core_automation.base.BaseTest;
 import com.core_automation.utils.Common;
 import org.testng.annotations.AfterMethod;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import static com.core_automation.utils.TestDataUtil.getValue;
 
-public class EducatorChangePasswordTest extends BaseTest {
+public class SponsorChangePasswordTest extends BaseTest {
     public static Homepage homepage;
     public static ManageUsersLoginPage manageLearnerLoginPage;
     public static ManageLearnerPage manageLearnerPage;
@@ -39,18 +39,18 @@ public class EducatorChangePasswordTest extends BaseTest {
     @Test(description = "Verify that User is able to change password")
     public void verifyUserIsAbleToChangePassword() {
         homepage.clickOnSignInButton();
-        manageLearnerLoginPage.enterUsername(getValue("learner.firstName") + timestamp + "@yopmail.com")
+        manageLearnerLoginPage.enterUsername(getValue("primaryContact.firstName") + timestamp + "@yopmail.com")
                 .clickOnLoginWithPasswordButton()
                 .enterPassword(getValue("learner.password"))
                 .clickOnLoginButton();
-        Common.assertionTrue(manageLearnerLoginPage.isUserIsLogin(), "Learner is logged in successfully");
+        Common.assertionTrue(manageLearnerLoginPage.isUserIsLogin(), "Sponsor is logged in successfully");
         manageLearnerPage.clickOnEditProfileIcon()
                 .clickOnChangePasswordButton();
         manageUsersChangePasswordPage.enterCurrentPassword(getValue("learner.password"))
                 .enterNewPassword(getValue("learner.password"))
                 .enterConfirmPassword(getValue("learner.password"))
                 .clickOnSaveNewPasswordButton();
-        Common.assertionTrue(manageUsersChangePasswordPage.isPasswordUpdated(),"Learner password is updated");
+        Common.assertionTrue(manageUsersChangePasswordPage.isPasswordUpdated(),"Sponsor password is updated");
 
 
     }
@@ -61,3 +61,5 @@ public class EducatorChangePasswordTest extends BaseTest {
 
     }
 }
+
+

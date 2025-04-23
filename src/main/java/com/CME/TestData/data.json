@@ -11,10 +11,11 @@
   },
   "admin": {
     "learner": "Learners",
-    "educator": "Educators"
+    "educator": "Educators",
+    "sponsor": "Sponsors"
   },
   "learner": {
-    "firstName": "Automation",
+    "firstName": "AutomationL",
     "lastName": "Learner",
     "password": "Test@1234",
     "middleName": "test",
@@ -40,7 +41,7 @@
     }
   },
   "educator": {
-    "firstName": "Automation",
+    "firstName": "AutomationE",
     "lastName": "educator",
     "password": "Test@1234",
     "middleName": "test",
@@ -61,5 +62,64 @@
       "firstName": "Admin_Educator",
       "password": "Qwe@1234"
     }
+  },
+  "sponsor": {
+    "edit": {
+      "company": "Tech Innovators Inc.",
+      "website": "https://techinnovators.com"
+    }
+    },
+
+  "primaryContact": {
+    "firstName": "AutomationS",
+    "lastName": "Sponsor",
+    "title": "Automation-S",
+    "extension": "101"
+  },
+  "secondaryContact": {
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "title": "COO",
+    "workPhoneNumber": "1234567891",
+    "extension": "102",
+    "mobileNumber": "9876543211",
+    "email": "bob.smith@techinnovators.com"
+  },
+  "address": {
+    "line1": "123 Main Street",
+    "line2": "Suite 400",
+    "city": "San Francisco",
+    "state": "Ohio",
+    "zip": "94105"
+  },
+  "bank": {
+    "routingNumber": "123123123",
+    "accountNumber": "123456789012"
+  },
+  "apContact": {
+    "firstName": "Carla",
+    "lastName": "Davis",
+    "email": "carla.davis@techinnovators.com",
+    "phoneNumber": "1234567892",
+    "extension": "103"
+  },
+  "grantContact": {
+    "firstName": "David",
+    "lastName": "Lee",
+    "title": "Grants Manager",
+    "workPhoneNumber": "1234567893",
+    "extension": "104",
+    "mobileNumber": "9876543212",
+    "email": "david.lee@techinnovators.com"
+  },
+  "grantSignatory": {
+    "firstName": "Eve",
+    "lastName": "Taylor",
+    "title": "Program Director",
+    "workPhoneNumber": "1234567894",
+    "extension": "105",
+    "mobileNumber": "9876543213",
+    "email": "eve.taylor@techinnovators.com"
   }
 }
+

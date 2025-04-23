@@ -2,7 +2,7 @@ package com.CME.TestCases;
 
 import com.CME.BaseClass;
 import com.CME.FrontEndPages.Homepage;
-import com.CME.FrontEndPages.ManageLearnerLoginPage;
+import com.CME.FrontEndPages.ManageUsersLoginPage;
 import com.CME.FrontEndPages.ManageLearnerPage;
 import com.CME.FrontEndPages.ManageUsersChangePasswordPage;
 import com.core_automation.base.BaseTest;
@@ -16,7 +16,7 @@ import static com.core_automation.utils.TestDataUtil.getValue;
 
 public class LearnerChangePasswordTest extends BaseTest {
     public static Homepage homepage;
-    public static ManageLearnerLoginPage manageLearnerLoginPage;
+    public static ManageUsersLoginPage manageLearnerLoginPage;
     public static ManageLearnerPage manageLearnerPage;
     public static ManageUsersChangePasswordPage manageUsersChangePasswordPage;
 
@@ -25,7 +25,7 @@ public class LearnerChangePasswordTest extends BaseTest {
     public void beforeClass(){
 
         homepage = new Homepage();
-        manageLearnerLoginPage = new ManageLearnerLoginPage();
+        manageLearnerLoginPage = new ManageUsersLoginPage();
         manageLearnerPage = new ManageLearnerPage();
         manageUsersChangePasswordPage = new ManageUsersChangePasswordPage();
     }

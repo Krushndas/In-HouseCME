@@ -42,6 +42,7 @@ public class RegisterLearnerTest extends BaseTest {
         .enterLastName(getValue("learner.lastName"))
                 .enterWorkEmail(getValue("learner.firstName")+ timestamp +"@yopmail.com")
                 .enterMobileNumber(String.valueOf(timestamp))
+                .ClickOnOPTCheckbox()
                 .enterPassword(getValue("learner.password"))
                 .clickOnLearnerRegisterButton();
         Common.assertionTrue(registerLearnerPage.isLearnerDashboardVisible(),"Learner Dashboard is displayed");

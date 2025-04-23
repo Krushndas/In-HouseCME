@@ -1,6 +1,7 @@
 package com.CME.FrontEndPages;
 
 import com.core_automation.base.BaseTest;
+import com.core_automation.utils.LocatorUtil;
 import com.core_automation.utils.TestUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -116,11 +117,7 @@ public class ManageLearnerPage extends BaseTest {
     public ManageLearnerPage clickOnAddPracticeButton(){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("learner.profile.addPracticeButton")));
-        WebElement element = driver.findElement(By.id("practice-btn-1"));
-// 2. Cast WebDriver to JavascriptExecutor
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-// 3. Click using JavaScript
-        js.executeScript("arguments[0].click();", element);
+        TestUtils.clickElement(getLocator("learner.profile.addPracticeButton"));
         return this;
     }
     public ManageLearnerPage enterNameOfPractice(String practice){
@@ -199,6 +196,19 @@ public class ManageLearnerPage extends BaseTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 // 3. Click using JavaScript
         js.executeScript("arguments[0].click();", element);
+        return this;
+    }
+    public ManageLearnerPage clickOnAdminAddPracticeButton(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(LocatorUtil.getLocator("generic.loaderOverlay")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LocatorUtil.getLocator("learner.profile.addPracticeButton")));
+        WebElement element = driver.findElement(By.xpath("//a[@id='add-practice-btn-1']"));
+// 2. Cast WebDriver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+// 3. Click using JavaScript
+        js.executeScript("arguments[0].click();", element);
+
+
+
         return this;
     }
 

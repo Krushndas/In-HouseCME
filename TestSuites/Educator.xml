@@ -5,24 +5,24 @@
         <listener class-name="com.CME.utils.TestListener" />
     </listeners>
     <parameter name="type" value="individual"/>
-    <test name="AddSponsorTest">
+    <test name="RegisterEducatorTest">
         <classes>
-            <class name="com.CME.TestCases.AdminAddSponsorTest"/>
+            <class name="com.CME.TestCases.RegisterEducatorTest"/>
         </classes>
     </test>
     <test name="EducatorLoginTest">
         <classes>
-            <class name="com.CME.TestCases.SponsorLoginTest"/>
+            <class name="com.CME.TestCases.EducatorLoginTest"/>
         </classes>
     </test>
     <test name="EducatorChangePasswordTest">
         <classes>
-            <class name="com.CME.TestCases.SponsorChangePasswordTest"/>
+            <class name="com.CME.TestCases.EducatorChangePasswordTest"/>
         </classes>
     </test>
-<!--    <test name="AdminEditEducatorProfile">-->
-<!--        <classes>-->
-<!--            <class name="com.CME.TestCases.AdminEditEducatorTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="AdminEditEducatorProfile">
+        <classes>
+            <class name="com.CME.TestCases.AdminEditEducatorTest"/>
+        </classes>
+    </test>
 </suite>

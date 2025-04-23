@@ -22,6 +22,10 @@ public class ManageRegisterLearnerPage extends BaseTest {
         TestUtils.enterValue(getLocator("learner.email"),email);
         return this;
     }
+    public ManageRegisterLearnerPage ClickOnOPTCheckbox()   {
+        TestUtils.clickElement(getLocator("generic.optCheckbox"));
+        return this;
+    }
     public ManageRegisterLearnerPage enterMobileNumber(String mobileNumber){
         TestUtils.enterValue(getLocator("lerner.mobileNumber"),mobileNumber);
         return this;

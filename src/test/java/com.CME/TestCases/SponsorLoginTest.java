@@ -1,6 +1,5 @@
 package com.CME.TestCases;
 
-
 import com.CME.BaseClass;
 import com.CME.FrontEndPages.Homepage;
 import com.CME.FrontEndPages.ManageUsersLoginPage;
@@ -13,7 +12,7 @@ import org.testng.annotations.Test;
 
 import static com.core_automation.utils.TestDataUtil.getValue;
 
-public class LearnerLoginTest extends BaseTest {
+public class SponsorLoginTest extends BaseTest {
 
     public static Homepage homepage;
     public static ManageUsersLoginPage manageUsersLoginPage;
@@ -36,11 +35,11 @@ public class LearnerLoginTest extends BaseTest {
     @Test(description = "Verify that User is able to login")
     public void verifyUserIsAbleToLogin() {
         homepage.clickOnSignInButton();
-        manageUsersLoginPage.enterUsername(getValue("learner.firstName") + timestamp + "@yopmail.com")
+        manageUsersLoginPage.enterUsername(getValue("primaryContact.firstName") + timestamp + "@yopmail.com")
                 .clickOnLoginWithPasswordButton()
                 .enterPassword(getValue("learner.password"))
                 .clickOnLoginButton();
-        Common.assertionTrue(manageUsersLoginPage.isUserIsLogin(), "Learner is logged in successfully");
+        Common.assertionTrue(manageUsersLoginPage.isUserIsLogin(), "Sponsor is logged in successfully");
 
     }
 
@@ -50,6 +49,4 @@ public class LearnerLoginTest extends BaseTest {
 
     }
 }
-
-
 
