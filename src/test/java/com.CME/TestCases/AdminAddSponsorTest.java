@@ -2,13 +2,12 @@ package com.CME.TestCases;
 
 import com.CME.AdminPages.*;
 import com.CME.BaseClass;
-import com.CME.FrontEndPages.ManageLearnerPage;
 import com.core_automation.base.BaseTest;
 import com.core_automation.utils.Common;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static com.core_automation.utils.TestDataUtil.getValue;
 
 public class AdminAddSponsorTest extends BaseTest {
@@ -26,8 +25,6 @@ public class AdminAddSponsorTest extends BaseTest {
         adminDashboard = new AdminDashboard();
         adminManageSponsorPage = new AdminManageSponsorPage();
         adminAddSponsorPage = new AdminAddSponsorPage();
-
-
     }
 
     @BeforeMethod
@@ -36,8 +33,8 @@ public class AdminAddSponsorTest extends BaseTest {
         adminLoginPage.visitURL();
     }
 
-    @Test(description = "Verify that Admin is able to edit learner")
-    public void verifyAdminIsAbleToEditLearner() throws InterruptedException {
+    @Test(description = "Verify that Admin is able to add Sponsor")
+    public void verifyAdminIsAbleToAddSponsor() throws InterruptedException {
         adminLoginPage.enterUsername(getValue("users.admin.username"))
                 .enterPassword(getValue("users.admin.password"))
                 .clickOnLoginButton();
@@ -108,17 +105,13 @@ public class AdminAddSponsorTest extends BaseTest {
                 .clickOnSearchIcon();
         Common.assertionTrue(adminManageSponsorPage.isAddedSponsorDisplayed(getValue("primaryContact.firstName") + timestamp + "@yopmail.com"), "Added Sponsor is displayed");
 
-
-
-
-
     }
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 }
 
 

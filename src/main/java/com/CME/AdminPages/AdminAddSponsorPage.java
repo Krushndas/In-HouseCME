@@ -86,6 +86,7 @@ public class AdminAddSponsorPage extends BaseTest {
         return this;
     }
     public AdminAddSponsorPage enterAddress(String address){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(LocatorUtil.getLocator("generic.loaderOverlay")));
         TestUtils.enterValue(getLocator("generic.profile.address"), address);
         return this;
     }
@@ -134,6 +135,7 @@ public class AdminAddSponsorPage extends BaseTest {
         return this;
     }
     public AdminAddSponsorPage enterGrantContactFirstName(String grantContactFirstName){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(LocatorUtil.getLocator("generic.loaderOverlay")));
         TestUtils.enterValue(getLocator("sponsor.profile.grantContactFirstName"), grantContactFirstName);
         return this;
     }

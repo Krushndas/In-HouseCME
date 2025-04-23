@@ -34,4 +34,5 @@ public class AdminManageSponsorPage extends BaseTest {
         return TestUtils.findElement(LocatorUtil.getLocator("admin.sponsor.email")).getText().equalsIgnoreCase(learnerName);
     }
 
+
 }

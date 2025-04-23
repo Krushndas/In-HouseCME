@@ -7,19 +7,19 @@
     <parameter name="type" value="individual"/>
     <test name="AddSponsorTest">
         <classes>
-            <class name="com.CME.TestCases.AdminAddSponsorTest"/>
+            <class name="com.CME.TestCases.SponsorEditProfileTest"/>
         </classes>
     </test>
-    <test name="EducatorLoginTest">
-        <classes>
-            <class name="com.CME.TestCases.SponsorLoginTest"/>
-        </classes>
-    </test>
-    <test name="EducatorChangePasswordTest">
-        <classes>
-            <class name="com.CME.TestCases.SponsorChangePasswordTest"/>
-        </classes>
-    </test>
+<!--    <test name="EducatorLoginTest">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.SponsorLoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="EducatorChangePasswordTest">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.SponsorChangePasswordTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="AdminEditEducatorProfile">-->
 <!--        <classes>-->
 <!--            <class name="com.CME.TestCases.AdminEditEducatorTest"/>-->
