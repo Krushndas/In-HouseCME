@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Admin Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="com.CME.utils.TestListener" />
+    </listeners>
+    <parameter name="type" value="Admin"/>
+    <test name="Register Learner Test">
+        <classes>
+            <class name="com.CME.TestCases.RegisterLearnerTest"/>
+        </classes>
+    </test>
+    <test name="Learner Login Test">
+        <classes>
+            <class name="com.CME.TestCases.LearnerLoginTest"/>
+        </classes>
+    </test>
+    <test name="Learner Change Password Test">
+        <classes>
+            <class name="com.CME.TestCases.LearnerChangePasswordTest"/>
+        </classes>
+    </test>
+    <test name="Admin Edit Learner Profile Test">
+        <classes>
+            <class name="com.CME.TestCases.AdminEditLearnerTest"/>
+        </classes>
+    </test>
+    <test name="Verify Learner Orphan name Of Practice Test">
+        <classes>
+            <class name="com.CME.TestCases.AdminVerifyOrphanNameOfPracticeTest"/>
+        </classes>
+    </test>
+    <test name="Register Educator Test">
+        <classes>
+            <class name="com.CME.TestCases.RegisterEducatorTest"/>
+        </classes>
+    </test>
+    <test name="Educator Login Test">
+        <classes>
+            <class name="com.CME.TestCases.EducatorLoginTest"/>
+        </classes>
+    </test>
+    <test name="Educator Change Password Test">
+        <classes>
+            <class name="com.CME.TestCases.EducatorChangePasswordTest"/>
+        </classes>
+    </test>
+    <test name="Admin Edit Educator Profile Test">
+        <classes>
+            <class name="com.CME.TestCases.AdminEditEducatorTest"/>
+        </classes>
+    </test>
+    <test name="Admin Add Sponsor Test">
+        <classes>
+            <class name="com.CME.TestCases.AdminAddSponsorTest"/>
+        </classes>
+    </test>
+    <test name="Sponsor Login Test">
+        <classes>
+            <class name="com.CME.TestCases.SponsorLoginTest"/>
+        </classes>
+    </test>
+    <test name="Sponsor Change Password Test">
+        <classes>
+            <class name="com.CME.TestCases.SponsorChangePasswordTest"/>
+        </classes>
+    </test>
+    <test name="Sponsor Edit Profile Test">
+        <classes>
+            <class name="com.CME.TestCases.SponsorEditProfileTest"/>
+        </classes>
+    </test>
+    <test name="Admin add group Test">
+        <classes>
+            <class name="com.CME.TestCases.AdminAddGroupTest"/>
+        </classes>
+    </test>
+</suite>

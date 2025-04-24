@@ -4,10 +4,10 @@ import com.CME.AdminPages.*;
 import com.CME.BaseClass;
 import com.core_automation.base.BaseTest;
 import com.core_automation.utils.Common;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
+import java.util.Date;
+
 import static com.core_automation.utils.TestDataUtil.getValue;
 
 public class AdminAddSponsorTest extends BaseTest {
@@ -16,11 +16,13 @@ public class AdminAddSponsorTest extends BaseTest {
     public static AdminDashboard adminDashboard;
     public static AdminManageSponsorPage adminManageSponsorPage;
     public static AdminAddSponsorPage adminAddSponsorPage;
+    private static String testType;
 
 
     @BeforeClass
-    public void beforeClass(){
-
+    @Parameters({"type"})
+    public void beforeClass(String type) {
+        testType = type;
         adminLoginPage = new AdminLoginPage();
         adminDashboard = new AdminDashboard();
         adminManageSponsorPage = new AdminManageSponsorPage();
@@ -31,6 +33,9 @@ public class AdminAddSponsorTest extends BaseTest {
     public void beforeMethod() {
         BaseClass.setup();
         adminLoginPage.visitURL();
+        if (testType.equalsIgnoreCase("Admin")) {//run only when test type is e2e
+            timestamp = (int) ((new Date()).getTime() / 1000L);
+        }
     }
 
     @Test(description = "Verify that Admin is able to add Sponsor")

@@ -31,6 +31,7 @@ public class AdminDashboard extends BaseTest {
         return this;
     }
     public AdminDashboard searchLearnerUser(String userEmail){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
         TestUtils.enterValue(getLocator("generic.search"),userEmail );
         return this;
     }

@@ -64,7 +64,7 @@ public class AdminEditLearnerTest extends BaseTest {
                 .selectDegree(getValue("learner.degree"))
                 .selectBoardCertificate(getValue("learner.boardCertification"))
                 .clickOnAdminAddPracticeButton()
-                .enterNameOfPractice(getValue("learner.practiceName"))
+                .enterNameOfPractice(getValue("learner.practiceName")+  timestamp)
                 .enterPracticeAddress(getValue("learner.address"))
                 .enterPracticeAddress1((getValue("learner.address2")))
                 .enterPracticeCity(getValue("learner.city"))

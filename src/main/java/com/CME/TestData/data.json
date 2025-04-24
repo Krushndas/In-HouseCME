@@ -12,7 +12,10 @@
   "admin": {
     "learner": "Learners",
     "educator": "Educators",
-    "sponsor": "Sponsors"
+    "sponsor": "Sponsors",
+    "group": "Groups",
+    "orphan-NameOfPractice": "Orphan-Name of Practice",
+    "customerSupport": "Customer Support"
   },
   "learner": {
     "firstName": "AutomationL",
@@ -120,6 +123,16 @@
     "extension": "105",
     "mobileNumber": "9876543213",
     "email": "eve.taylor@techinnovators.com"
-  }
+  },
+  "admin-group": {
+      "groupName": "Automation_Group",
+      "type": "Practice",
+      "streetAddress": "1234 Wellness Blvd",
+      "state": "California",
+      "city": "Los Angeles",
+      "zip": "23510",
+      "numberOfDoctors": "25"
+    }
 }
+
 
