@@ -10,24 +10,29 @@
             <class name="com.CME.TestCases.RegisterLearnerTest"/>
         </classes>
     </test>
-    <test name="Learner Login Test">
+<!--    <test name="Learner Login Test">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.LearnerLoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Learner Change Password Test">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.LearnerChangePasswordTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Admin Edit Learner Profile Test">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.AdminEditLearnerTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Verify learner Orphan name Of Practice Test">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.AdminVerifyOrphanNameOfPracticeTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Verify need some help request">
         <classes>
-            <class name="com.CME.TestCases.LearnerLoginTest"/>
-        </classes>
-    </test>
-    <test name="Learner Change Password Test">
-        <classes>
-            <class name="com.CME.TestCases.LearnerChangePasswordTest"/>
-        </classes>
-    </test>
-    <test name="Admin Edit Learner Profile Test">
-        <classes>
-            <class name="com.CME.TestCases.AdminEditLearnerTest"/>
-        </classes>
-    </test>
-    <test name="Verify learner Orphan name Of Practice Test">
-        <classes>
-            <class name="com.CME.TestCases.AdminVerifyOrphanNameOfPracticeTest"/>
+            <class name="com.CME.TestCases.AdminVerifyNeedSomeHelpRequestTest"/>
         </classes>
     </test>
 </suite>

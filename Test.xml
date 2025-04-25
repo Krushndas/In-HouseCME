@@ -7,7 +7,7 @@
     <parameter name="type" value="Admin"/>
     <test name="Learner Login Test">
         <classes>
-            <class name="com.CME.TestCases.AdminAddGroupTest"/>
+            <class name="com.CME.TestCases.AdminVerifyNeedSomeHelpRequestTest"/>
         </classes>
     </test>
 <!--    <test name="Demo Test">-->

@@ -132,7 +132,10 @@
       "city": "Los Angeles",
       "zip": "23510",
       "numberOfDoctors": "25"
-    }
+    },
+  "admin-needSomeHelp": {
+    "comment": "Automation comment"
+  }
 }
 
 

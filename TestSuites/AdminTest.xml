@@ -30,6 +30,11 @@
             <class name="com.CME.TestCases.AdminVerifyOrphanNameOfPracticeTest"/>
         </classes>
     </test>
+    <test name="Verify need some help request">
+        <classes>
+            <class name="com.CME.TestCases.AdminVerifyNeedSomeHelpRequestTest"/>
+        </classes>
+    </test>
     <test name="Register Educator Test">
         <classes>
             <class name="com.CME.TestCases.RegisterEducatorTest"/>
