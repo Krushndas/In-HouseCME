@@ -15,7 +15,10 @@
     "sponsor": "Sponsors",
     "group": "Groups",
     "orphan-NameOfPractice": "Orphan-Name of Practice",
-    "customerSupport": "Customer Support"
+    "customerSupport": "Customer Support",
+    "program": "Programs",
+    "onDemandProgram": "On Demand Programs",
+    "liveProgram": "Live Programs"
   },
   "learner": {
     "firstName": "AutomationL",
@@ -135,6 +138,18 @@
     },
   "admin-needSomeHelp": {
     "comment": "Automation comment"
+  },
+  "onDemandProgram": {
+    "month": "May",
+    "programName": "Automation On Demand Program Test",
+    "CMEStatus": "Non-CME",
+    "CMECredit": "100",
+    "forum": "Lecture",
+    "meetingID": "81717429642",
+    "programLength": "90",
+    "cost": "150",
+    "timeZone": "(GMT+5:30) Mumbai, Kolkata, New Delhi",
+    "description": "A comprehensive on-demand CME course "
   }
 }
 
