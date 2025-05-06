@@ -140,12 +140,16 @@
     "comment": "Automation comment"
   },
   "onDemandProgram": {
+    "programTime": "6",
+    "onDemandProgram.programExpiryTime": "9",
+    "programExpiryTime": "9",
+    "programExpiryDate": "14",
     "month": "May",
     "programName": "Automation On Demand Program Test",
     "CMEStatus": "Non-CME",
     "CMECredit": "100",
     "forum": "Lecture",
-    "meetingID": "81717429642",
+    "meetingID": "89395916445",
     "programLength": "90",
     "cost": "150",
     "timeZone": "(GMT+5:30) Mumbai, Kolkata, New Delhi",

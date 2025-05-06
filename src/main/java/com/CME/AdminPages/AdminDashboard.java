@@ -75,5 +75,21 @@ public class AdminDashboard extends BaseTest {
 
         return this;
     }
+    public AdminDashboard clickOnProgramEditIcon() {
+
+        String dynamicEmail = ((getValue("onDemandProgram.programName") + timestamp));
+
+// 2. Build XPath to locate the Edit button next to that email
+        String xpath = "(//td[text()='" + dynamicEmail + "']/following-sibling::td/a[@class='action-btn']/span)[2]";
+
+// 3. Find the WebElement using the XPath
+        WebElement editButton = driver.findElement(By.xpath(xpath));
+
+// 4. Use JavascriptExecutor to click the edit button
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", editButton);
+
+        return this;
+    }
 
 }

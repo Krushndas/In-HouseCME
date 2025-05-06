@@ -5,9 +5,12 @@ import com.core_automation.utils.LocatorUtil;
 import com.core_automation.utils.TestUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -64,29 +67,40 @@ public class ManageOnDemandProgramPage extends BaseTest {
         selectFromDropdownOrAutocomplete(educator);
         return this;
     }
-    public ManageOnDemandProgramPage selectProgramReevaluateDate(String month){
+    public ManageOnDemandProgramPage selectProgramReevaluateDate(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("onDemandProgram.dateToReEvaluateProgram")));
         TestUtils.clickElement(getLocator("onDemandProgram.dateToReEvaluateProgram"));
-        selectMonthReevaluate(month);
-        selectDate();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("program.programReevaluateDate")));
+        TestUtils.clickElement(getLocator("program.programReevaluateDate"));
         return this;
     }
-    public ManageOnDemandProgramPage selectProgramDate(String month){
+    public ManageOnDemandProgramPage selectProgramDate(String time) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("onDemandProgram.programDate")));
         WebElement element = driver.findElement(By.xpath("//input[@id='program_date']"));
-// 2. Cast WebDriver to JavascriptExecutor
+
         JavascriptExecutor js = (JavascriptExecutor) driver;
-// 3. Click using JavaScript
+        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        Thread.sleep(300); // optional, helps visually smooth out the scroll
         js.executeScript("arguments[0].click();", element);
-       // TestUtils.clickElement(getLocator("onDemandProgram.programDate"));
-        selectProgramMonth(month);
-        selectDate();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("program.time")));
+        TestUtils.enterValue(getLocator("program.time"), time);
+
         return this;
+
     }
-    public ManageOnDemandProgramPage selectProgramExpiryDate(String month){
+    public ManageOnDemandProgramPage selectProgramExpiryDate(String time) throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("onDemandProgram.programExpiryDate")));
         TestUtils.clickElement(getLocator("onDemandProgram.programExpiryDate"));
-        selectProgramExpiryMonth(month);
-        selectDate();
+        Thread.sleep(2000);
+        TestUtils.clickElement(getLocator("onDemandProgram.programExpiryDate"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("program.programExpiryDate")));
+        TestUtils.clickElement(getLocator("program.programExpiryDate"));
+        //Time enter
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("program.expiryTime")));
+        TestUtils.enterValue(getLocator("program.expiryTime"), time);
         return this;
+
     }
     public ManageOnDemandProgramPage SelectTimeZone(String timeZone){
         TestUtils.selectDropdownValue(getLocator("onDemandProgram.timeZone"), timeZone);
@@ -97,30 +111,24 @@ public class ManageOnDemandProgramPage extends BaseTest {
         return this;
     }
     public ManageOnDemandProgramPage clickOnAddProgramButton(){
-        TestUtils.clickElement(getLocator("onDemandProgram.addProgramButton"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("onDemandProgram.addProgramButton")));
+        WebElement element = driver.findElement(By.xpath("(//button[text()='Add Program'])[2]"));
+// 2. Cast WebDriver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+// 3. Click using JavaScript
+        js.executeScript("arguments[0].click();", element);
         return this;
-    }
-    public static void selectDate(){
-        LocalDate currentDate = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd");
-        String formattedDate = currentDate.format(formatter);
-        clickElement(LocatorUtil.getLocator("programs.reevaluateDate", formattedDate));
-        log.info("Selected Date {}", formattedDate);
-    }
-
-    public void selectMonthReevaluate(String month){
-        TestUtils.selectDropdownValue(getLocator("programs.MonthReevaluate"), month);
-    }
-    public void selectProgramMonth(String month){
-        TestUtils.selectDropdownValue(getLocator("programs.programMonth"), month);
-    }
-    public void selectProgramExpiryMonth(String month){
-        TestUtils.selectDropdownValue(getLocator("programs.programExpiryMonth"), month);
     }
 
     public void selectFromDropdownOrAutocomplete(String value){
-        clickElement(LocatorUtil.getLocator("programs.selectSponsor", value));
+        clickElement(LocatorUtil.getLocator("program.selectSponsor", value));
         log.info("Selected value {}", value);
     }
+
+    public boolean IsAddedProgramIsDisplayed(String programName) {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(LocatorUtil.getLocator("generic.loaderOverlay")));
+        return TestUtils.findElement(LocatorUtil.getLocator("onDemandProgram.programNameVerify")).getText().equalsIgnoreCase(programName);
+    }
+
 
 }
