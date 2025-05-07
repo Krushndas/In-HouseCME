@@ -75,9 +75,19 @@
             <class name="com.CME.TestCases.SponsorEditProfileTest"/>
         </classes>
     </test>
-    <test name="Admin add group Test">
+    <test name="Admin Add Group Test">
         <classes>
             <class name="com.CME.TestCases.AdminAddGroupTest"/>
+        </classes>
+    </test>
+    <test name="Admin On-Demand Program Test">
+        <classes>
+            <class name="com.CME.TestCases.AddOnDemandProgramTest"/>
+        </classes>
+    </test>
+    <test name="Admin Add Live Program Test">
+        <classes>
+            <class name="com.CME.TestCases.AddLiveProgramTest"/>
         </classes>
     </test>
 </suite>
