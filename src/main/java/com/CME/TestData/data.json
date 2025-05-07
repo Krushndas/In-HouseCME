@@ -146,6 +146,7 @@
     "programExpiryDate": "14",
     "month": "May",
     "programName": "Automation On Demand Program Test",
+    "liveProgramName": "Automation Live Program Test",
     "CMEStatus": "Non-CME",
     "CMECredit": "100",
     "forum": "Lecture",
