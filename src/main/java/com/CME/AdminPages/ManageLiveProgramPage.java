@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static com.core_automation.utils.TestDataUtil.getValue;
 import static com.core_automation.utils.TestUtils.getLocator;
 
 public class ManageLiveProgramPage extends BaseTest {
@@ -31,4 +32,33 @@ public class ManageLiveProgramPage extends BaseTest {
         TestUtils.enterValue(getLocator("liveProgram.sponsorAmount"), amount);
         return this;
     }
+
+    public ManageLiveProgramPage clickOnEditLiveProgramButton(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(LocatorUtil.getLocator("admin.loginToastMessage")));
+        //TestUtils.clickElement(getLocator("generic.editIcon"));
+        String dynamicEmail = getValue("onDemandProgram.liveProgramName") + timestamp;
+
+// 2. Build XPath to locate the Edit button next to that email
+        String xpath = "//td[text()='" + dynamicEmail + "']/following-sibling::td//a[3][@class='action-btn']/span";
+
+// 3. Find the WebElement using the XPath
+        WebElement editButton = driver.findElement(By.xpath(xpath));
+
+// 4. Use JavascriptExecutor to click the edit button
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", editButton);
+
+        return this;
+    }
+
+    public ManageLiveProgramPage updateProgramStatus(String status){
+        TestUtils.selectDropdownValue(getLocator("liveProgram.programStatus"), status);
+         return this;
+    }
+
+    public ManageLiveProgramPage clickOnUpdateProgramButton(){
+        TestUtils.clickElement(getLocator("liveProgram.programEditButton"));
+        return this;
+    }
+
 }

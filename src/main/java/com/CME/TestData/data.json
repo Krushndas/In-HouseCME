@@ -140,6 +140,7 @@
     "comment": "Automation comment"
   },
   "onDemandProgram": {
+    "programStatus": "Registration",
     "programTime": "6",
     "onDemandProgram.programExpiryTime": "9",
     "programExpiryTime": "9",
@@ -154,7 +155,8 @@
     "programLength": "90",
     "cost": "150",
     "timeZone": "(GMT+5:30) Mumbai, Kolkata, New Delhi",
-    "description": "A comprehensive on-demand CME course "
+    "description": "A comprehensive on-demand CME course",
+    "liveProgramDescription": "A comprehensive live program"
   }
 }
 

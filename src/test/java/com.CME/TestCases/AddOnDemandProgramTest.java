@@ -58,7 +58,7 @@ public class AddOnDemandProgramTest extends BaseTest {
                 .selectProgramDate(getValue("onDemandProgram.programTime"))
                 .selectProgramExpiryDate(getValue("onDemandProgram.programExpiryTime"))
                 .SelectTimeZone(getValue("onDemandProgram.timeZone"))
-                .enterDescription(getValue("onDemandProgram.description"))
+                .enterDescription(getValue("onDemandProgram.description") + timestamp)
                 .clickOnAddProgramButton();
         adminDashboard.searchLearnerUser(getValue("onDemandProgram.programName") + timestamp)
                 .clickOnSearchIcon();

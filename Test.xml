@@ -5,14 +5,24 @@
         <listener class-name="com.CME.utils.TestListener" />
     </listeners>
     <parameter name="type" value="Admin"/>
-    <test name="Learner Login Test">
+    <test name="Learner Login Test1">
+        <classes>
+            <class name="com.CME.TestCases.RegisterLearnerTest"/>
+        </classes>
+    </test>
+    <test name="Learner Login Test2">
         <classes>
             <class name="com.CME.TestCases.AddOnDemandProgramTest"/>
         </classes>
     </test>
-<!--    <test name="Demo Test">-->
-<!--        <classes>-->
-<!--            <class name="com.CME.TestCases.AdminVerifyOrphanNameOfPracticeTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Learner Login Test3">
+        <classes>
+            <class name="com.CME.TestCases.AddLiveProgramTest"/>
+        </classes>
+    </test>
+    <test name="Demo Test">
+        <classes>
+            <class name="com.CME.TestCases.RegisterForProgramTest"/>
+        </classes>
+    </test>
 </suite>

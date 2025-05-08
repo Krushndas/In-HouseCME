@@ -60,11 +60,17 @@ public class AddLiveProgramTest extends BaseTest {
                 .selectProgramDate(getValue("onDemandProgram.programTime"))
                 .selectProgramExpiryDate(getValue("onDemandProgram.programExpiryTime"))
                 .SelectTimeZone(getValue("onDemandProgram.timeZone"))
-                .enterDescription(getValue("onDemandProgram.description"));
+                .enterDescription(getValue("onDemandProgram.liveProgramDescription")+timestamp);
         manageLiveProgramPage.clickOnAddLiveProgramButton();
         adminDashboard.searchLearnerUser(getValue("onDemandProgram.liveProgramName") + timestamp)
                 .clickOnSearchIcon();
         Common.assertionTrue(manageOnDemandProgramPage.IsAddedProgramIsDisplayed(getValue("onDemandProgram.liveProgramName")+timestamp), "Added live program is displayed");
+        manageLiveProgramPage.clickOnEditLiveProgramButton()
+                .updateProgramStatus(getValue("onDemandProgram.programStatus"))
+                .clickOnUpdateProgramButton();
+
+
+
     }
 
 //    @AfterMethod
