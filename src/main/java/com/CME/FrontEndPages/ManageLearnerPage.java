@@ -94,7 +94,7 @@ public class ManageLearnerPage extends BaseTest {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("generic.loaderOverlay")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("learner.profile.licenseRenewalDate")));
         TestUtils.clickElement(getLocator("learner.profile.licenseRenewalDate"));
-        selectDate();
+        TestUtils.clickElement(getLocator("learner.profile.licenseRenewalDateSelection"));
         return this;
     }
 

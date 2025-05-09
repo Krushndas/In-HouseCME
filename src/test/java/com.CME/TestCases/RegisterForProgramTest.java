@@ -2,6 +2,7 @@ package com.CME.TestCases;
 
 import com.CME.BaseClass;
 import com.CME.FrontEndPages.Homepage;
+import com.CME.FrontEndPages.ManageLearnerDashboardPage;
 import com.CME.FrontEndPages.ManageRegisterProgramPage;
 import com.CME.FrontEndPages.ManageUsersLoginPage;
 import com.core_automation.base.BaseTest;
@@ -18,6 +19,7 @@ public class RegisterForProgramTest extends BaseTest {
     public static Homepage homepage;
     public static ManageUsersLoginPage manageUsersLoginPage;
     public static ManageRegisterProgramPage manageRegisterProgramPage;
+    public static ManageLearnerDashboardPage manageLearnerDashboardPage;
 
 
     @BeforeClass
@@ -26,6 +28,7 @@ public class RegisterForProgramTest extends BaseTest {
         homepage = new Homepage();
         manageUsersLoginPage = new ManageUsersLoginPage();
         manageRegisterProgramPage = new ManageRegisterProgramPage();
+        manageLearnerDashboardPage = new ManageLearnerDashboardPage();
     }
 
     @BeforeMethod
@@ -42,11 +45,12 @@ public class RegisterForProgramTest extends BaseTest {
                 .enterPassword(getValue("learner.password"))
                 .clickOnLoginButton();
         Common.assertionTrue(manageUsersLoginPage.isUserIsLogin(), "Educator is logged in successfully");
-        manageRegisterProgramPage.
-                clickOnRegisterLiveProgramButton()
+        manageRegisterProgramPage.clickOnRegisterLiveProgramButton()
                 .clickOnContinewBrowsingButton()
                 .clickOnRegisterOnDemandProgramButton()
                 .clickOnViewMyProgramButton();
+        Common.assertionTrue(manageLearnerDashboardPage.IsRegisteredLiveProgramDisplay(getValue("onDemandProgram.liveProgramName")+timestamp),"Registered live program name is displayed");
+        Common.assertionTrue(manageLearnerDashboardPage.IsRegisteredOnDemandProgramDisplay(getValue("onDemandProgram.programName")+timestamp), "Registered on demand program name is displayed");
 
 
     }

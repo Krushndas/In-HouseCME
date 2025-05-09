@@ -57,7 +57,12 @@ public class ManageLiveProgramPage extends BaseTest {
     }
 
     public ManageLiveProgramPage clickOnUpdateProgramButton(){
-        TestUtils.clickElement(getLocator("liveProgram.programEditButton"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LocatorUtil.getLocator("liveProgram.programEditButton")));
+        WebElement element = driver.findElement(By.xpath("//button[text()='Update Program']"));
+// 2. Cast WebDriver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+// 3. Click using JavaScript
+        js.executeScript("arguments[0].click();", element);
         return this;
     }
 
