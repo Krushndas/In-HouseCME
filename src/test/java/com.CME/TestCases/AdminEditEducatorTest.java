@@ -9,6 +9,7 @@ import com.CME.FrontEndPages.ManageLearnerPage;
 import com.CME.FrontEndPages.ManageRegisterEducatorPage;
 import com.core_automation.base.BaseTest;
 import com.core_automation.utils.Common;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -59,8 +60,8 @@ public class AdminEditEducatorTest extends BaseTest {
                 .selectDateOfBirth()
                 .selectSuffix(getValue("educator.suffix"))
                 .selectDegree(getValue("educator.degree"))
-                .enterMobileNumber(String.valueOf(timestamp))
-                .enterWorkPhoneNumber(String.valueOf(timestamp));
+                .enterMobileNumber(88+String.valueOf(timestamp))
+                .enterWorkPhoneNumber(88+String.valueOf(timestamp));
         adminManageEducatorPage.enterWorkEmail(getValue("adminEducator.edit.firstName") + timestamp + "@yopmail.com");
         manageRegisterEducatorPage.clickOnOPTCheckbox()
                 .enterPassword(getValue("educator.password"))
@@ -90,11 +91,11 @@ public class AdminEditEducatorTest extends BaseTest {
     }
 
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 
 
 }

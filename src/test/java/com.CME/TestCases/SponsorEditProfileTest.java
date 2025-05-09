@@ -47,16 +47,16 @@ public class SponsorEditProfileTest extends BaseTest {
         Common.assertionTrue(manageUsersLoginPage.isUserIsLogin(), "Sponsor is logged in successfully");
         manageSponsorEditProfilePage.clickOnEditProfileIcon()
                 .clickOnEditProfileOption();
-        adminAddSponsorPage.enterCompany(getValue("sponsor.edit.company"))
+        adminAddSponsorPage.enterCompany(getValue("sponsor.edit.company")+ timestamp )
                 .enterWebsite("https://" + "Test" + timestamp + ".com")
 
                 // Primary Contact
                 .enterPrimaryContactFirstName(getValue("primaryContact.firstName"))
                 .enterPrimaryContactLastName(getValue("primaryContact.lastName"))
                 .enterTitleOfPrimaryContact(getValue("primaryContact.title"))
-                .enterPrimaryWorkPhoneNumber(String.valueOf(timestamp))
+                .enterPrimaryWorkPhoneNumber(33+String.valueOf(timestamp))
                 .enterPrimaryExtension(getValue("primaryContact.extension"))
-                .enterPrimaryMobileNumber(String.valueOf(timestamp))
+                .enterPrimaryMobileNumber(33+String.valueOf(timestamp))
                 .enterPrimaryEmail(getValue("primaryContact.firstName") + timestamp + "@yopmail.com")
 
                 // Secondary Contact
@@ -109,10 +109,10 @@ public class SponsorEditProfileTest extends BaseTest {
 
     }
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 }
 

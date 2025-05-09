@@ -34,9 +34,7 @@ public class RegisterEducatorTest extends BaseTest {
     public void beforeMethod() {
         BaseClass.setup();
         homePage.visitHomepage();
-        if (testType.equalsIgnoreCase("Admin")) {//run only when test type is e2e
-            timestamp = (int) ((new Date()).getTime() / 1000L);
-        }
+
     }
 
     @Test(description = "Register as educator test")
@@ -49,8 +47,8 @@ public class RegisterEducatorTest extends BaseTest {
                 .selectDateOfBirth()
                // .selectSuffix(getValue("educator.suffix"))
                 .selectDegree(getValue("educator.degree"))
-                .enterMobileNumber(String.valueOf(timestamp))
-                .enterWorkPhoneNumber(String.valueOf(timestamp))
+                .enterMobileNumber(88 + String.valueOf(timestamp))
+                .enterWorkPhoneNumber(88 +(String.valueOf(timestamp)))
                 .enterWorkEmail(getValue("educator.firstName")+ timestamp + "@yopmail.com")
                // .clickOnOPTCheckbox()
                 .enterPassword(getValue("educator.password"))

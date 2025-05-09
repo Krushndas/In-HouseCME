@@ -33,9 +33,7 @@ public class AdminAddSponsorTest extends BaseTest {
     public void beforeMethod() {
         BaseClass.setup();
         adminLoginPage.visitURL();
-        if (testType.equalsIgnoreCase("Admin")) {//run only when test type is e2e
-            timestamp = (int) ((new Date()).getTime() / 1000L);
-        }
+
     }
 
     @Test(description = "Verify that Admin is able to add Sponsor")
@@ -47,7 +45,7 @@ public class AdminAddSponsorTest extends BaseTest {
         adminDashboard.clickOnMenuIcon()
                 .clickOnModule(getValue("admin.sponsor"));
         adminManageSponsorPage.clickOnAddSponsorButton();
-        adminAddSponsorPage.enterCompany(getValue("sponsor.edit.company"))
+        adminAddSponsorPage.enterCompany(getValue("sponsor.edit.company") + timestamp)
                 .enterWebsite("https://" + "Test" + timestamp + ".com")
                 .enterPassword(getValue("learner.password"))
                 .enterConfirmPassword(getValue("learner.password"))
@@ -56,9 +54,9 @@ public class AdminAddSponsorTest extends BaseTest {
                 .enterPrimaryContactFirstName(getValue("primaryContact.firstName"))
                 .enterPrimaryContactLastName(getValue("primaryContact.lastName"))
                 .enterTitleOfPrimaryContact(getValue("primaryContact.title"))
-                .enterPrimaryWorkPhoneNumber(String.valueOf(timestamp))
+                .enterPrimaryWorkPhoneNumber(99+ String.valueOf(timestamp))
                 .enterPrimaryExtension(getValue("primaryContact.extension"))
-                .enterPrimaryMobileNumber(String.valueOf(timestamp))
+                .enterPrimaryMobileNumber(99+ String.valueOf(timestamp))
                 .enterPrimaryEmail(getValue("primaryContact.firstName") + timestamp + "@yopmail.com")
 
                 // Secondary Contact

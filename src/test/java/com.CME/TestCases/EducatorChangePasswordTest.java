@@ -39,7 +39,7 @@ public class EducatorChangePasswordTest extends BaseTest {
     @Test(description = "Verify that User is able to change password")
     public void verifyUserIsAbleToChangePassword() {
         homepage.clickOnSignInButton();
-        manageLearnerLoginPage.enterUsername(getValue("learner.firstName") + timestamp + "@yopmail.com")
+        manageLearnerLoginPage.enterUsername(getValue("educator.firstName") + timestamp + "@yopmail.com")
                 .clickOnLoginWithPasswordButton()
                 .enterPassword(getValue("learner.password"))
                 .clickOnLoginButton();

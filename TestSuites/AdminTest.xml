@@ -90,4 +90,9 @@
             <class name="com.CME.TestCases.AddLiveProgramTest"/>
         </classes>
     </test>
+    <test name="Learner Registered Program Test">
+        <classes>
+            <class name="com.CME.TestCases.RegisterForProgramTest"/>
+        </classes>
+    </test>
 </suite>

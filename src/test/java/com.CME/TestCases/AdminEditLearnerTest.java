@@ -48,7 +48,7 @@ public class AdminEditLearnerTest extends BaseTest {
                 .clickOnModule(getValue("admin.learner"))
                 .searchLearnerUser(getValue("learner.firstName") + timestamp + "@yopmail.com")
                 .clickOnSearchIcon()
-                .clickOnEducatorEditIcon();
+                .clickOnLearnerEditIcon();
         manageLearnerPage.enterFirstName(getValue("adminLearner.edit.firstName"))
                 .enterMiddleName(getValue("learner.middleName"))
                 .enterLastName(getValue("learner.lastName"))
@@ -82,11 +82,11 @@ public class AdminEditLearnerTest extends BaseTest {
 
     }
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 }
 
 

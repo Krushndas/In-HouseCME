@@ -55,11 +55,11 @@ public class RegisterForProgramTest extends BaseTest {
 
     }
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 }
 
 

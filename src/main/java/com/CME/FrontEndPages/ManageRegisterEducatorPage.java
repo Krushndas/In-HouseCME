@@ -32,7 +32,8 @@ public class ManageRegisterEducatorPage extends BaseTest {
     }
     public ManageRegisterEducatorPage selectDateOfBirth(){
         TestUtils.clickElement(getLocator("educator.profile.DOB"));
-        selectDate();
+        TestUtils.clickElement(getLocator("educator.selectDOB"));
+
         return this;
     }
     public ManageRegisterEducatorPage selectSuffix(String suffix) {

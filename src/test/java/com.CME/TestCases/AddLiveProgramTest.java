@@ -53,9 +53,9 @@ public class AddLiveProgramTest extends BaseTest {
         manageLiveProgramPage.enterZoomURL("https://us06web.zoom.us/j/" + timestamp + "4?pwd=bgOMLNPulPZhQSU9GZTWkPeaaHMBY9.1");
         manageOnDemandProgramPage.enterProgramLength(getValue("onDemandProgram.programLength"))
                 .enterProgramCost(getValue("onDemandProgram.cost"))
-                .selectSponsor("Tech Innovators Inc.");
+                .selectSponsor(getValue("sponsor.edit.company")+ timestamp );
         manageLiveProgramPage.enterSponsorAmount(getValue("onDemandProgram.cost"));
-        manageOnDemandProgramPage.selectEducator("Automation")
+        manageOnDemandProgramPage.selectEducator(getValue("educator.firstName"))
                 .selectProgramReevaluateDate()
                 .selectProgramDate(getValue("onDemandProgram.programTime"))
                 .selectProgramExpiryDate(getValue("onDemandProgram.programExpiryTime"))
@@ -73,9 +73,9 @@ public class AddLiveProgramTest extends BaseTest {
 
     }
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 }

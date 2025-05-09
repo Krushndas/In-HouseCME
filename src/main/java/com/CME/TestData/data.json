@@ -42,7 +42,7 @@
   },
   "adminLearner": {
     "edit": {
-      "firstName": "Admin_Learner",
+      "firstName": "AutomationL",
       "password": "Qwe@1234"
     }
   },
@@ -65,7 +65,7 @@
   },
   "adminEducator": {
     "edit": {
-      "firstName": "Admin_Educator",
+      "firstName": "AutomationE",
       "password": "Qwe@1234"
     }
   },

@@ -7,22 +7,22 @@
     <parameter name="type" value="Admin"/>
     <test name="Learner Login Test1">
         <classes>
-            <class name="com.CME.TestCases.RegisterLearnerTest"/>
+            <class name="com.CME.TestCases.AdminAddSponsorTest"/>
         </classes>
     </test>
     <test name="Learner Login Test2">
         <classes>
-            <class name="com.CME.TestCases.AddOnDemandProgramTest"/>
+            <class name="com.CME.TestCases.SponsorEditProfileTest"/>
         </classes>
     </test>
-    <test name="Learner Login Test3">
-        <classes>
-            <class name="com.CME.TestCases.AddLiveProgramTest"/>
-        </classes>
-    </test>
-    <test name="Demo Test">
-        <classes>
-            <class name="com.CME.TestCases.RegisterForProgramTest"/>
-        </classes>
-    </test>
+<!--    <test name="Learner Login Test3">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.AddLiveProgramTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Demo Test">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.RegisterForProgramTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

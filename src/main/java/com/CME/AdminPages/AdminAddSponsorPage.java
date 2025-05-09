@@ -87,6 +87,7 @@ public class AdminAddSponsorPage extends BaseTest {
     }
     public AdminAddSponsorPage enterAddress(String address){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(LocatorUtil.getLocator("generic.loaderOverlay")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("generic.profile.address")));
         TestUtils.enterValue(getLocator("generic.profile.address"), address);
         return this;
     }
