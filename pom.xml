@@ -22,7 +22,7 @@
          
     <dependencies>
         <dependency>
-            <groupId>Krushndas.In-HouseCME</groupId>
+             <groupId>parmarkeyur084.techark</groupId>
             <artifactId>AutomationTemplate</artifactId>
             <version>1.0.32-SNAPSHOT</version>
         </dependency>
