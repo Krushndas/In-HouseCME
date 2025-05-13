@@ -157,7 +157,13 @@
     "timeZone": "(GMT+5:30) Mumbai, Kolkata, New Delhi",
     "description": "A comprehensive on-demand CME course",
     "liveProgramDescription": "A comprehensive live program"
-  }
+  },
+  "delete":{
+    "learnerValidationMessage":"The record has been successfully deleted."
 }
+
+}
+
+
 
 

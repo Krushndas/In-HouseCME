@@ -7,14 +7,14 @@
     <parameter name="type" value="Admin"/>
     <test name="Learner Login Test1">
         <classes>
-            <class name="com.CME.TestCases.AdminAddSponsorTest"/>
+            <class name="com.CME.TestCases.DeleteAdminDataTest"/>
         </classes>
     </test>
-    <test name="Learner Login Test2">
-        <classes>
-            <class name="com.CME.TestCases.SponsorEditProfileTest"/>
-        </classes>
-    </test>
+<!--    <test name="Learner Login Test2">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.SponsorEditProfileTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="Learner Login Test3">-->
 <!--        <classes>-->
 <!--            <class name="com.CME.TestCases.AddLiveProgramTest"/>-->
