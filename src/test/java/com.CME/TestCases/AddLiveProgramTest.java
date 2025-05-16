@@ -46,23 +46,24 @@ public class AddLiveProgramTest extends BaseTest {
                 .clickOnModule(getValue("admin.program"))
                 .clickOnModule(getValue("admin.liveProgram"));
         manageOnDemandProgramPage.clickOnAddNewProgramButton()
-                .enterProgramName(getValue("onDemandProgram.liveProgramName")+timestamp)
+                .enterProgramName(getValue("onDemandProgram.liveProgramName")+ timestamp )
                 .SelectCMEStatus(getValue("onDemandProgram.CMEStatus"))
                 //.enterCMECredit(getValue("onDemandProgram.CMECredit"))
                 .SelectCMEForum(getValue("onDemandProgram.forum"));
         manageLiveProgramPage.enterZoomURL("https://us06web.zoom.us/j/" + timestamp + "4?pwd=bgOMLNPulPZhQSU9GZTWkPeaaHMBY9.1");
         manageOnDemandProgramPage.enterProgramLength(getValue("onDemandProgram.programLength"))
                 .enterProgramCost(getValue("onDemandProgram.cost"))
-                .selectSponsor(getValue("sponsor.edit.company")+ timestamp );
+                .selectSponsor(getValue("sponsor.edit.company") + timestamp);
         manageLiveProgramPage.enterSponsorAmount(getValue("onDemandProgram.cost"));
         manageOnDemandProgramPage.selectEducator(getValue("educator.firstName"))
                 .selectProgramReevaluateDate()
                 .selectProgramDate(getValue("onDemandProgram.programTime"))
                 .selectProgramExpiryDate(getValue("onDemandProgram.programExpiryTime"))
-                .SelectTimeZone(getValue("onDemandProgram.timeZone"))
-                .enterDescription(getValue("onDemandProgram.liveProgramDescription")+timestamp);
+                .SelectTimeZone(getValue("onDemandProgram.timeZone"));
+        manageLiveProgramPage.disableWaitingRoom();
+        manageOnDemandProgramPage.enterDescription(getValue("onDemandProgram.liveProgramDescription")+timestamp);
         manageLiveProgramPage.clickOnAddLiveProgramButton();
-        adminDashboard.searchLearnerUser(getValue("onDemandProgram.liveProgramName") + timestamp)
+        adminDashboard.searchLearnerUser(getValue("onDemandProgram.liveProgramName") + timestamp )
                 .clickOnSearchIcon();
         Common.assertionTrue(manageOnDemandProgramPage.IsAddedProgramIsDisplayed(getValue("onDemandProgram.liveProgramName")+timestamp), "Added live program is displayed");
         manageLiveProgramPage.clickOnEditLiveProgramButton()

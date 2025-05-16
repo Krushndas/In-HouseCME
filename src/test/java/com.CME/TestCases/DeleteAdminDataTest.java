@@ -23,7 +23,6 @@ public class DeleteAdminDataTest extends BaseTest {
     public static AdminEditLearnerPage adminEditLearnerPage;
     public static ManageDataDeletion manageDataDeletion;
 
-
     @BeforeClass
     public void beforeClass(){
 
@@ -32,8 +31,6 @@ public class DeleteAdminDataTest extends BaseTest {
         manageLearnerPage = new ManageLearnerPage();
         adminEditLearnerPage = new AdminEditLearnerPage();
         manageDataDeletion = new ManageDataDeletion();
-
-
     }
 
     @BeforeMethod
@@ -50,63 +47,61 @@ public class DeleteAdminDataTest extends BaseTest {
         Common.assertionTrue(adminDashboard.isDashboardVisible(),"Dashboard is displayed");
         adminDashboard.clickOnMenuIcon()
                 .clickOnModule(getValue("admin.learner"))
-                .searchLearnerUser("Aayush1@yopmail.com")
+                .searchLearnerUser(getValue("adminLearner.edit.firstName")+ timestamp +"@yopmail.com")
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("Aayush1@yopmail.com")
+        manageDataDeletion.clickOnDeleteButton(getValue("adminLearner.edit.firstName")+ timestamp +"@yopmail.com")
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "Learner record is deleted successfully");
         manageDataDeletion.clickAdminOnMenuIcon();
         adminDashboard.clickOnModule(getValue("admin.educator"))
-                .searchLearnerUser("Automation1745313348@yopmail.com")
+                .searchLearnerUser(getValue("adminEducator.edit.firstName") + timestamp + "@yopmail.com")
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("Automation1745313348@yopmail.com")
+        manageDataDeletion.clickOnDeleteButton(getValue("adminEducator.edit.firstName") + timestamp + "@yopmail.com")
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "educator record is deleted successfully");
         manageDataDeletion.clickAdminOnMenuIcon();
         adminDashboard.clickOnModule(getValue("admin.sponsor"))
-                .searchLearnerUser("https://Test1745406582.com")
+                .searchLearnerUser("https://" + "Test" + timestamp + ".com")
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("https://Test1745406582.com")
+        manageDataDeletion.clickOnSponsorDeleteButton("https://" + "Test" + timestamp + ".com")
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "sponsor record is deleted successfully");
         manageDataDeletion.clickAdminOnMenuIcon();
         adminDashboard.clickOnModule(getValue("admin.group"))
-                .searchLearnerUser("Automation_Group1746784235")
+                .searchLearnerUser(getValue("admin-group.groupName") + timestamp)
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("Automation_Group1746784235")
+        manageDataDeletion.clickOnGroupDeleteButton(getValue("admin-group.groupName") + timestamp)
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "Group record is deleted successfully");
         manageDataDeletion.clickAdminOnMenuIcon();
         adminDashboard.clickOnModule(getValue("admin.customerSupport"))
-                .searchLearnerUser("AutomationL1746788148@yopmail.com")
+                .searchLearnerUser(getValue("adminLearner.edit.firstName")+ timestamp +"@yopmail.com")
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("AutomationL1746788148@yopmail.com")
+        manageDataDeletion.clickOnDeleteButton(getValue("adminLearner.edit.firstName")+ timestamp +"@yopmail.com")
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "Customer support record is deleted successfully");
         manageDataDeletion.clickAdminOnMenuIcon();
         adminDashboard.clickOnModule(getValue("admin.program"))
                 .clickOnModule(getValue("admin.liveProgram"))
-                .searchLearnerUser("Automation Live Program Test1746788971")
+                .searchLearnerUser(getValue("onDemandProgram.liveProgramName")+ timestamp )
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("Automation Live Program Test1746788971")
+        manageDataDeletion.clickOnDeleteButton(getValue("onDemandProgram.liveProgramName")+ timestamp )
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "live program record is deleted successfully");
         manageDataDeletion.clickAdminOnMenuIcon();
         adminDashboard.clickOnModule(getValue("admin.program"))
                 .clickOnModule(getValue("admin.onDemandProgram"))
-                .searchLearnerUser("Automation On Demand Program Test1746788971")
+                .searchLearnerUser(getValue("onDemandProgram.programName")+timestamp)
                 .clickOnSearchIcon();
-        manageDataDeletion.clickOnDeleteButton("Automation On Demand Program Test1746788971")
+        manageDataDeletion.clickOnDeleteButton(getValue("onDemandProgram.programName")+timestamp)
                 .clickOnDeleteOption();
         Common.assertionTrue(manageDataDeletion.isRecordIsDeleted(getValue("delete.learnerValidationMessage")), "on demand program record is deleted successfully");
-
-
     }
 
-//    @AfterMethod
-//    public void afterTest(){
-//        BaseTest.tearDown();
-//
-//    }
+    @AfterMethod
+    public void afterTest(){
+        BaseTest.tearDown();
+
+    }
 }
 

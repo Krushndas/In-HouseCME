@@ -13,12 +13,21 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/parmarkeyur084/AutomationTemplate</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>parmarkeyur084.techark</groupId>
             <artifactId>AutomationTemplate</artifactId>
             <version>1.0.32-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
 </project>

@@ -7,7 +7,7 @@
     <parameter name="type" value="Admin"/>
     <test name="Learner Login Test1">
         <classes>
-            <class name="com.CME.TestCases.DeleteAdminDataTest"/>
+            <class name="com.CME.TestCases.AddLiveProgramTest"/>
         </classes>
     </test>
 <!--    <test name="Learner Login Test2">-->

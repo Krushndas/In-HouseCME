@@ -31,6 +31,43 @@ public class ManageDataDeletion extends BaseTest {
 
         return this;
     }
+    public ManageDataDeletion clickOnSponsorDeleteButton(String name) throws InterruptedException {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
+        //TestUtils.clickElement(getLocator("generic.editIcon"));
+        Thread.sleep(2000);
+        //  String dynamicEmail = getValue("learner.firstName") + timestamp + "@yopmail.com";
+
+// 2. Build XPath to locate the Edit button next to that email
+        String xpath = "//a[text()='" + name + "']/ancestor::tr//span[contains(@class, 'icon-delete')]";
+
+// 3. Find the WebElement using the XPath
+        WebElement deleteButton = driver.findElement(By.xpath(xpath));
+
+// 4. Use JavascriptExecutor to click the edit button
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", deleteButton);
+
+        return this;
+    }
+    public ManageDataDeletion clickOnGroupDeleteButton(String name) throws InterruptedException {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
+        //TestUtils.clickElement(getLocator("generic.editIcon"));
+        Thread.sleep(2000);
+        //  String dynamicEmail = getValue("learner.firstName") + timestamp + "@yopmail.com";
+
+// 2. Build XPath to locate the Edit button next to that email
+        String xpath = "//td[text()='" + name + "']/following-sibling::td//a[@class='action-btn show_confirm']/span[@class='icon-delete']";
+
+// 3. Find the WebElement using the XPath
+        WebElement deleteButton = driver.findElement(By.xpath(xpath));
+
+// 4. Use JavascriptExecutor to click the edit button
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", deleteButton);
+
+        return this;
+    }
+
 
     public ManageDataDeletion clickOnDeleteOption(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator("generic.deletePopup")));

@@ -66,4 +66,9 @@ public class ManageLiveProgramPage extends BaseTest {
         return this;
     }
 
+      public ManageLiveProgramPage disableWaitingRoom(){
+        TestUtils.clickElement(getLocator("liveProgram.waitingRoom"));
+        return this;
+      }
+
 }

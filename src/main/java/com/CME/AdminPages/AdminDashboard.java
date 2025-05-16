@@ -60,7 +60,7 @@ public class AdminDashboard extends BaseTest {
     public AdminDashboard clickOnEducatorEditIcon() throws InterruptedException {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator("admin.loginToastMessage")));
         //TestUtils.clickElement(getLocator("generic.editIcon"));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         String dynamicEmail = getValue("educator.firstName") + timestamp + "@yopmail.com";
 
 // 2. Build XPath to locate the Edit button next to that email
@@ -89,6 +89,11 @@ public class AdminDashboard extends BaseTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", editButton);
 
+        return this;
+    }
+
+    public AdminDashboard searchLearnerByCompany(String company){
+        TestUtils.enterValue(getLocator("Sponsor.searchByCompany"), company);
         return this;
     }
 
