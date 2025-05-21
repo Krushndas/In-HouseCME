@@ -24,7 +24,7 @@ parameters:
       - Sponsor
 
 variables:
-  MAVEN_FEED_TOKEN: $(System.AccessToken)
+  MAVEN_FEED_TOKEN: $(GITHUB_PAT)
 
 steps:
 
