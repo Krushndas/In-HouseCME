@@ -16,8 +16,8 @@
 
     <repositories>
         <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/parmarkeyur084/AutomationTemplate</url>
+            <id>AutomationFeed</id>
+            <url>https://pkgs.dev.azure.com/techark/_packaging/AutomationFeed/maven/v1</url>
         </repository>
     </repositories>
 
