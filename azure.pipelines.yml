@@ -1,0 +1,76 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+parameters:
+  - name: testType
+    displayName: 'Select Test Type'
+    type: string
+    default: 'e2e'
+    values:
+      - e2e
+      - individual
+
+  - name: testngFile
+    displayName: 'Select TestNG File Name'
+    type: string
+    default: 'AdminTest'
+    values:
+      - AdminTest
+      - Educator
+      - Learner
+      - Sponsor
+
+variables:
+  MAVEN_FEED_TOKEN: $(System.AccessToken)
+
+steps:
+
+  - task: JavaToolInstaller@1
+    inputs:
+      versionSpec: '17'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+
+  - script: |
+      sudo apt-get update
+      sudo apt-get install -y google-chrome-stable jq unzip
+      CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -1)
+      CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-patch-versions-per-build-with-downloads.json" | jq -r --arg v "$CHROME_VERSION" '.builds[$v].downloads.chromedriver[] | select(.platform=="linux64") | .url')
+      wget "$CHROMEDRIVER_URL" -O chromedriver.zip
+      unzip chromedriver.zip
+      sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+      sudo chmod +x /usr/local/bin/chromedriver
+      chromedriver --version
+    displayName: 'Install Chrome and ChromeDriver'
+
+  - script: |
+      google-chrome --version
+      chromedriver --version
+    displayName: 'Check Chrome and ChromeDriver Versions'
+
+  - task: Maven@4
+    env:
+      ENV_SELECT: $(ENV_SELECT)
+      USERNAME: $(USERNAME)
+      PASSWORD: $(PASSWORD)
+      BROWSER: $(BROWSER)
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean test'
+      options: >
+        -U
+        -DENV_SELECT=$(ENV_SELECT)
+        -DUSERNAME=$(USERNAME)
+        -DPASSWORD=$(PASSWORD)
+        -DBROWSER=$(BROWSER)
+        -DtestType=${{ parameters.testType }}
+        -DSuiteToExecute=${{ parameters.testngFile }}.xml
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/*.xml'
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: true
+      effectivePomSkip: false
+      sonarQubeRunAnalysis: false

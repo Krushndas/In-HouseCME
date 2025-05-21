@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="com.CME.utils.TestListener" />
     </listeners>
-    <parameter name="type" value="individual"/>
+    <parameter name="type" value="e2e"/>
     <test name="Admin Add Sponsor Test">
         <classes>
             <class name="com.CME.TestCases.AdminAddSponsorTest"/>
