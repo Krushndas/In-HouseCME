@@ -1,7 +1,7 @@
 {
   "app": {
-    "url": "https://in-house-testing.tekark.com/site-admin/learner",
-    "homepageURL": "https://in-house-testing.tekark.com/"
+    "url": "https://in-house-staging.tekark.com/site-admin/learner",
+    "homepageURL": "https://in-house-staging.tekark.com/"
   },
   "users": {
     "admin": {

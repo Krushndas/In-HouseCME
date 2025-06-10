@@ -95,9 +95,9 @@
             <class name="com.CME.TestCases.RegisterForProgramTest"/>
         </classes>
     </test>
-    <test name="Dalate Data">
-        <classes>
-            <class name="com.CME.TestCases.DeleteAdminDataTest"/>
-        </classes>
-    </test>
+<!--    <test name="Dalate Data">-->
+<!--        <classes>-->
+<!--            <class name="com.CME.TestCases.DeleteAdminDataTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
